@@ -3,4 +3,5 @@
     <string name="title_activity_register">Register</string>
     <string name="title_activity_sensors">sensors</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_device">device</string>
 </resources>

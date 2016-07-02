@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -13,7 +12,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.maps.android.ui.BubbleIconFactory;
 import com.google.maps.android.ui.IconGenerator;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,GoogleMap.OnMarkerClickListener  {
@@ -52,7 +50,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng GUC = new LatLng(29.9882, 31.4413);
        for (int i =0; i<5; i++){
 
-           Bitmap icon_marker1 = mIconGenerator.makeIcon("C-Building, room:C5-302" );
+           Bitmap icon_marker1 = mIconGenerator.makeIcon("C-Building, room:C5-30"+i );
            googleMarker = mMap.addMarker((new MarkerOptions().icon(BitmapDescriptorFactory.fromBitmap(icon_marker1)))
                    .position(new LatLng(29.9882+i, 31.4413+i))
            );
@@ -62,10 +60,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        Bitmap icon_marker1 = mIconGenerator.makeIcon("C-Building, room:C5-302" );
 //        Bitmap icon_marker2 = mIconGenerator.makeIcon("D-Building, room:D2-209" );
 //        Bitmap icon_marker3 = mIconGenerator.makeIcon("B-Building, room:B5-102" );
-
-
-
-
 
 //        googleMarker = mMap.addMarker((new MarkerOptions().icon(BitmapDescriptorFactory.fromBitmap(icon_marker1)))
 //                        .position(GUC)
@@ -85,14 +79,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        googleMarker2.showInfoWindow();
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(GUC));
-
     }
 
     @Override
     public boolean onMarkerClick(Marker marker) {
         //if (marker.equals(googleMarker) || marker.equals(googleMarker2) || marker.equals(googleMarker3) ) {
             //handle click here
-            Intent intent = new Intent("com.example.dell.iotnodeapp.sensors");
+            Intent intent = new Intent("com.example.dell.iotnodeapp.device");
             startActivity(intent);
        // }
         return true;

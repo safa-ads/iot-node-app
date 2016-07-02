@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public void LoginButton() {
         btn_login = (Button) findViewById(R.id.btnSingIn);
         email = (EditText) findViewById(R.id.email);
-        password = (EditText) findViewById(R.id.password);
+        password = (EditText) findViewById(R.id.text);
         btn_login.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View v) {
